@@ -19,7 +19,11 @@ import { StateComponent } from './state/state.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { SubPageHeaderComponent } from './sub-page-header/sub-page-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,12 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     NgbModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatPaginatorModule 
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

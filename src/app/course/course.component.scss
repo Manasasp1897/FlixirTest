@@ -27,10 +27,34 @@ mat-header-cell, mat-cell, td {
     text-align: left;
   }
   
-  input[type="text"] {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+  // input[type="text"] {
+  //   width: 100%;
+  //   padding: 5px;
+  //   border: 1px solid #ccc;
+  //   border-radius: 4px;
+  // }
   
+  .vertical-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Adjust the gap to control the spacing between form fields */
+  }
+
+  table {
+    width: 100%;
+  }
+
+    /* Center-align text in mat-header-cell */
+    mat-header-cell,
+    mat-cell {
+      place-content: center;
+      flex: 1;
+    }
+  
+    .header-cell,
+    .data-cell {
+      width: 20%;
+      /* Adjust the width as needed */
+      text-align: center;
+      /* Adjust alignment as needed */
+    }

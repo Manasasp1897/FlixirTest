@@ -1,14 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* You can add global styles to this file, and also import other style files */ 
+ 
+/* Import the Deep Purple and Amber theme */ 
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; 
 
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+ 
+body { 
+  margin: 0 !important; 
+  font-family: Roboto, 'Helvetica Neue', sans-serif !important; 
+  background-color: white !important; /* Set the background to white for the white theme */ 
+} 
+ 
+.mr-2 { 
+  margin-right: 0.5rem !important; 
+} 
+ 
+/* Override specific styles from the Deep Purple and Amber theme */ 
+.mat-primary { 
+  background-color: white !important; /* Change the primary color background to white */ 
+  color: #000 !important; /* Change the text color to black */ 
+} 
+ 
+.mat-accent { 
+  background-color: white !important; /* Change the accent color background to white */ 
+  color: #000 !important; /* Change the text color to black */ 
+} 
+
+mat-header-row { 
+  background: #deecff !important; 
+  color: blue !important; 
+  font-weight: bolder !important; 
 }
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-/* Importing Bootstrap SCSS file. */
+/* Importing Bootstrap SCSS file. */ 
 @import 'bootstrap/scss/bootstrap';
