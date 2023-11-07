@@ -1,0 +1,20 @@
+<app-sub-page-header icon="home">
+    <h2>College</h2>
+
+    <button mat-flat-button color="primary" class="action" (click)="newCollege()">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span>New</span>
+    </button>
+</app-sub-page-header>
+
+
+<ng-template #newCollegeDialog let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Add College</h4>
+    </div>
+    
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="addCollege()">Add College</button>
+        <button type="button" class="btn btn-outline-primary" (click)="modal.dismiss()">Close</button>
+    </div>
+</ng-template>

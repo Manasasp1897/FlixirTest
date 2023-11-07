@@ -1,0 +1,79 @@
+<app-sub-page-header icon="home">
+    <h2>Course</h2>
+
+    <button mat-flat-button color="primary" class="action" (click)="newCourse()">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span>New</span>
+    </button>
+</app-sub-page-header>
+
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="instructor">
+            <mat-header-cell *matHeaderCellDef> Instructor </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.instructor}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+            <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+            <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button mat-icon-button color="warn">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </td>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+
+
+<ng-template #newCourseDialog let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Course</h4>
+    </div>
+    <div class="modal-body">
+        Add New Course
+        <table class="custom-table">
+            <tr>
+              <td class="label">Name:</td>
+              <td class="input"><input type="text" [(ngModel)]="currentCourseData.name" /></td>
+            </tr>
+            <tr>
+              <td class="label">Instructor:</td>
+              <td class="input"><input type="text" [(ngModel)]="currentCourseData.instructor" /></td>
+            </tr>
+            <tr>
+              <td class="label">Duration:</td>
+              <td class="input"><input type="text" [(ngModel)]="currentCourseData.duration" /></td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="upsertCourse()">Add Course</button>
+        <button type="button" class="btn btn-outline-primary" (click)="modal.dismiss()">Close</button>
+    </div>
+</ng-template>
+

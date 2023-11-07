@@ -1,0 +1,24 @@
+<div>
+    <mat-toolbar color="primary">
+        <button (click)="toggle()" mat-icon-button>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+        <span class="title" routerLink="/">Dashboard</span>
+        <span class="spacer"></span>
+        <span class="welcome-text">Hello {{ user }}</span>
+    </mat-toolbar>
+
+    <mat-drawer-container>
+        <mat-drawer mode="side" [opened]="opened">
+          <app-menu-list [menu]="menu"></app-menu-list>
+        </mat-drawer>
+
+        <mat-drawer-content [class.margin-left]="opened">
+          <router-outlet></router-outlet>
+        </mat-drawer-content>
+      </mat-drawer-container>
+
+  <div class="footer">
+    Copyright @ 2022 SMB Group All rights reserved.
+  </div>
+</div>
